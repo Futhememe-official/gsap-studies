@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { PageLayout } from "@/shared/components/PageLayout";
 import { useTimeline } from "@/shared/hooks/useGsapAnimation";
-import gsap from "gsap";
 // @ts-ignore
 import styles from "./Study03View.module.css";
 
