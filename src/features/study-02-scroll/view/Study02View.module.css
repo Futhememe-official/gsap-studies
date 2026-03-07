@@ -1,0 +1,107 @@
+.progressTrack {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--border);
+  z-index: 100;
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b35, #e8ff47);
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.section {
+  padding: 2rem 0 4rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.scrollCard {
+  padding: 1.5rem;
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.cardDesc {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Horizontal scroll */
+.hScrollSection {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: var(--bg-1);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.hTrack {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 3rem;
+  will-change: transform;
+}
+
+.hItem {
+  flex-shrink: 0;
+  width: 220px;
+  height: 280px;
+  border-radius: var(--radius-lg);
+  background: oklch(30% 0.08 var(--hue));
+  border: 1px solid oklch(40% 0.08 var(--hue));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.hItemNum {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: oklch(80% 0.15 var(--hue));
+}
+
+.hItemLabel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: oklch(60% 0.1 var(--hue));
+}
+
+.spacer {
+  height: 50vh;
+}
