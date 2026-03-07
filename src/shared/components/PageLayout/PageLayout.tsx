@@ -1,32 +1,39 @@
-import { useEffect, useRef } from 'react'
-import { Link } from '@tanstack/react-router'
-import gsap from 'gsap'
-import styles from './PageLayout.module.css'
+import { useEffect, useRef } from "react";
+import { Link } from "@tanstack/react-router";
+import gsap from "gsap";
+// @ts-ignore
+import styles from "./PageLayout.module.css";
 
 interface PageLayoutProps {
-  title: string
-  description?: string
-  tag?: string
-  tagColor?: string
-  children: React.ReactNode
+  title: string;
+  description?: string;
+  tag?: string;
+  tagColor?: string;
+  children: React.ReactNode;
 }
 
-export function PageLayout({ title, description, tag, tagColor, children }: PageLayoutProps) {
-  const headerRef = useRef<HTMLDivElement>(null)
+export function PageLayout({
+  title,
+  description,
+  tag,
+  tagColor,
+  children,
+}: PageLayoutProps) {
+  const headerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.page-header-content > *', {
+      gsap.from(".page-header-content > *", {
         y: 24,
         opacity: 0,
         duration: 0.6,
         stagger: 0.1,
-        ease: 'power3.out',
-      })
-    }, headerRef)
+        ease: "power3.out",
+      });
+    }, headerRef);
 
-    return () => ctx.revert()
-  }, [])
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div className={styles.layout}>
@@ -38,7 +45,10 @@ export function PageLayout({ title, description, tag, tagColor, children }: Page
           </Link>
           <div className={styles.meta}>
             {tag && (
-              <span className={styles.tag} style={{ '--tag-color': tagColor } as React.CSSProperties}>
+              <span
+                className={styles.tag}
+                style={{ "--tag-color": tagColor } as React.CSSProperties}
+              >
                 {tag}
               </span>
             )}
@@ -49,5 +59,5 @@ export function PageLayout({ title, description, tag, tagColor, children }: Page
       </header>
       <main className={styles.main}>{children}</main>
     </div>
-  )
+  );
 }
