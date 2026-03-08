@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: fit-content;
+
+  align-items: center;
+  padding: 1rem;
+
+  justify-content: space-between;
+
+  p {
+    font-weight: 600;
+    font-size: 1.75rem;
+  }
+}
