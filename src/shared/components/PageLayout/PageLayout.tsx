@@ -10,6 +10,7 @@ interface PageLayoutProps {
   tag?: string;
   tagColor?: string;
   children: React.ReactNode;
+  removePadding?: boolean;
 }
 
 export function PageLayout({
@@ -18,6 +19,7 @@ export function PageLayout({
   tag,
   tagColor,
   children,
+  removePadding,
 }: PageLayoutProps) {
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -57,7 +59,9 @@ export function PageLayout({
           {description && <p className={styles.description}>{description}</p>}
         </div>
       </header>
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main} style={removePadding ? { padding: 0 } : {}}>
+        {children}
+      </main>
     </div>
   );
 }
