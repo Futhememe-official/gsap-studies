@@ -31,7 +31,7 @@ export const studies: StudyRoute[] = [
     description: "Menu expansivo e animado via gsap",
     path: "/study-04",
     tag: "component",
-    difficulty: "advanced",
+    difficulty: "intermediate",
   },
 ];
 
