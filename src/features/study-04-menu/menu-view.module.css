@@ -12,6 +12,7 @@
   p {
     font-weight: 600;
     font-size: 1.75rem;
+    z-index: 2;
   }
 
   button {
@@ -25,7 +26,7 @@
   flex-direction: column;
   position: absolute;
   justify-content: space-between;
-  width: 70dvw;
+  width: 60dvw;
   height: 450px;
   right: 0;
   top: 0;

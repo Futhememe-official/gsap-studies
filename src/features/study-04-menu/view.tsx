@@ -25,7 +25,7 @@ export function Study4Menu() {
     >
       <header className={`${styles.header}`}>
         <div />
-        <p>WithGu</p>
+        <p className="title">WithGu</p>
         <button
           onClick={() => {
             if (isMenuOpen) {
@@ -35,7 +35,7 @@ export function Study4Menu() {
             }
           }}
         >
-          <Menu color="#fff" size={24} />
+          <Menu color={isMenuOpen ? "#232428" : "#fff"} size={24} />
         </button>
       </header>
       <nav className={`${styles.nav}`} ref={container}>

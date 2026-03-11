@@ -8,7 +8,7 @@ export const useStudy4Menu = () => {
   const leftImageRef = useRef(null);
   const rightImageRef = useRef(null);
   const container = useRef(null);
-  const { contextSafe } = useGSAP({ scope: container });
+  const { contextSafe } = useGSAP();
 
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
@@ -21,10 +21,12 @@ export const useStudy4Menu = () => {
 
   const openMenuAnimation = contextSafe(() => {
     const tl = gsap.timeline();
-    tl.to(container.current, { opacity: 1 }).to(container.current, {
-      y: 0,
-      delay: -0.5,
-    });
+    tl.to(container.current, { opacity: 1 })
+      .to(container.current, {
+        y: 0,
+        delay: -0.5,
+      })
+      .to(".title", { color: "#232428", x: "-140%", delay: -0.5 });
   });
 
   const handleMenuClose = contextSafe(() => {
@@ -32,10 +34,16 @@ export const useStudy4Menu = () => {
     tl.to(container.current, {
       y: "-100%",
       ease: "power1.inOut",
-    }).to(container.current, {
-      opacity: 0,
-      onComplete: () => setIsMenuOpen(false),
-    });
+    })
+      .to(container.current, {
+        opacity: 0,
+      })
+      .to(".title", {
+        color: "#fff",
+        x: 0,
+        delay: -1,
+        onComplete: () => setIsMenuOpen(false),
+      });
   });
 
   const handleMenuOpen = () => {
