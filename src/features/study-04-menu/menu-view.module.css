@@ -13,4 +13,83 @@
     font-weight: 600;
     font-size: 1.75rem;
   }
+
+  button {
+    z-index: 2;
+  }
+}
+
+.nav {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  position: absolute;
+  justify-content: space-between;
+  width: 70dvw;
+  height: 450px;
+  right: 0;
+  top: 0;
+  transform: translateY(-100%);
+  opacity: 0;
+
+  padding: 2rem;
+
+  color: #232428;
+
+  background-color: #fcfcf4;
+}
+
+.navContent {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  gap: 3rem;
+}
+
+.navFooter {
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+      opacity: 0.6;
+      transition: 0.4s;
+    }
+
+    a:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  h2:hover {
+    text-decoration: underline;
+  }
+}
+
+.leftImageHolder {
+  aspect-ratio: 242 / 309;
+  width: 16%;
+  background-color: #232428;
+}
+
+.rightImageHolder {
+  aspect-ratio: 242 / 309;
+  width: 16%;
+  background-color: #232428;
 }
