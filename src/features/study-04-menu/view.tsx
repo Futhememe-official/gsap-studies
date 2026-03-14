@@ -24,7 +24,7 @@ export function Study4Menu() {
       removePadding
     >
       <header className={`${styles.header}`}>
-        <div />
+        <div className="removable" />
         <p className="title">WithGu</p>
         <button
           onClick={() => {

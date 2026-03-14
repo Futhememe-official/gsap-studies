@@ -38,6 +38,10 @@
   color: #232428;
 
   background-color: #fcfcf4;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .navContent {
@@ -87,10 +91,18 @@
   aspect-ratio: 242 / 309;
   width: 16%;
   background-color: #232428;
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 }
 
 .rightImageHolder {
   aspect-ratio: 242 / 309;
   width: 16%;
   background-color: #232428;
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 }

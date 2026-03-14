@@ -20,13 +20,36 @@ export const useStudy4Menu = () => {
   );
 
   const openMenuAnimation = contextSafe(() => {
-    const tl = gsap.timeline();
-    tl.to(container.current, { opacity: 1 })
-      .to(container.current, {
-        y: 0,
-        delay: -0.5,
-      })
-      .to(".title", { color: "#232428", x: "-140%", delay: -0.5 });
+    const mm = gsap.matchMedia();
+
+    mm.add(
+      {
+        isMobile: "(max-width: 767px)",
+        isDesktop: "(min-width: 768px)",
+      },
+      (context) => {
+        const { isMobile } = context.conditions as {
+          isMobile: boolean;
+          isDesktop: boolean;
+        };
+
+        const tl = gsap.timeline();
+        tl.to(container.current, { opacity: 1 })
+          .to(container.current, {
+            y: 0,
+            delay: -0.5,
+          })
+          .to(".title", {
+            color: "#232428",
+            x: isMobile ? 0 : "-140%",
+            delay: -0.5,
+          })
+          .to(".removable", {
+            display: isMobile ? "none" : "block",
+            delay: -0.9,
+          });
+      },
+    );
   });
 
   const handleMenuClose = contextSafe(() => {
